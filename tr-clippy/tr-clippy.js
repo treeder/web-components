@@ -4,12 +4,7 @@ import 'https://cdn.jsdelivr.net/npm/@material/mwc-snackbar@0/+esm';
 export class Clippy extends LitElement {
 
     static get styles() {
-        return css`
-        a { color: rgb(13, 169, 239) }
-        mwc-icon {
-            --mdc-icon-size: 16px;
-        } 
-        `;
+        return css``;
     }
 
     static get properties() {
@@ -38,7 +33,6 @@ export class Clippy extends LitElement {
 
     render() {
         return html`
-        HELLO!!!
         <mwc-icon @click='${this.copy}'>content_copy</mwc-icon>
         <mwc-snackbar id="snackbar" labelText="..."></mwc-snackbar>
         `;
