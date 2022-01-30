@@ -38,6 +38,7 @@ export class Clippy extends LitElement {
 
     render() {
         return html`
+        HELLO!!!
         <mwc-icon @click='${this.copy}'>content_copy</mwc-icon>
         <mwc-snackbar id="snackbar" labelText="..."></mwc-snackbar>
         `;
