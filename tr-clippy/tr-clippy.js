@@ -7,8 +7,8 @@ export class Clippy extends LitElement {
     static get styles() {
         return css`
         :host {
-           --mdc-icon-size: var(--my-background, 14px);
-           --mdc-icon-button-size: var(--my-background, 20px);
+           --mdc-icon-size: var(--mdc-icon-size, 14px);
+           --mdc-icon-button-size: var(--mdc-icon-button-size, 20px);
         }
         `;
     }
