@@ -6,9 +6,12 @@ export class Clippy extends LitElement {
 
     static get styles() {
         return css`
-        :host {
-           --mdc-icon-size: var(--mdc-icon-size, 14px);
-           --mdc-icon-button-size: var(--mdc-icon-button-size, 20px);
+        mwc-icon-button {
+            --mdc-icon-size: 14px;
+            --mdc-icon-button-size: 22px;
+            // these don't work, I think because it creates a cycle:
+        //    --mdc-icon-size: var(--mdc-icon-size, 14px);
+        //    --mdc-icon-button-size: var(--mdc-icon-button-size, 20px);
         }
         `;
     }
