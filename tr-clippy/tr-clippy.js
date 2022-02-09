@@ -4,7 +4,12 @@ import 'https://cdn.jsdelivr.net/npm/@material/mwc-snackbar@0/+esm';
 export class Clippy extends LitElement {
 
     static get styles() {
-        return css``;
+        return css`
+        :host {
+           --mdc-icon-size: var(--my-background, 14px);
+           --mdc-icon-button-size: var(--my-background, 20px);
+        }
+        `;
     }
 
     static get properties() {
