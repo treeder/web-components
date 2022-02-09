@@ -1,5 +1,6 @@
-import { html, css, LitElement } from 'https://cdn.jsdelivr.net/npm/lit@2/+esm';
-import 'https://cdn.jsdelivr.net/npm/@material/mwc-snackbar@0/+esm';
+import { html, css, LitElement } from 'https://cdn.jsdelivr.net/npm/lit@2/+esm'
+import 'https://cdn.jsdelivr.net/npm/@material/mwc-snackbar@0/+esm'
+import 'https://cdn.jsdelivr.net/npm/@material/mwc-icon-button@0/+esm'
 
 export class Clippy extends LitElement {
 
@@ -38,7 +39,7 @@ export class Clippy extends LitElement {
 
     render() {
         return html`
-        <mwc-icon @click='${this.copy}'>content_copy</mwc-icon>
+        <mwc-icon-button @click='${this.copy}'>content_copy</mwc-icon-button>
         <mwc-snackbar id="snackbar" labelText="..."></mwc-snackbar>
         `;
     }
