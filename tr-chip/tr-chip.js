@@ -5,6 +5,7 @@ export class Chip extends LitElement {
     static get styles() {
         return css`
           .chip {
+            color: #212121,
             display: inline-block;
             padding: 0 25px;
             height: 30px;
