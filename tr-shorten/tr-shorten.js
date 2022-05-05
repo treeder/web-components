@@ -26,7 +26,7 @@ export class Shorten extends LitElement {
         if (this.value.length > this.prefixAmount) {
             s = this.truncate(this.value, this.prefixAmount)
             if (this.suffixAmount > 0) {
-                let remainder = this.text.substr(this.prefixAmount, this.value.length - 1)
+                let remainder = this.value.substr(this.prefixAmount, this.value.length - 1)
                 if (remainder.length > this.suffixAmount) {
                     remainder = remainder.substr(remainder.length - this.suffixAmount)
                 }
