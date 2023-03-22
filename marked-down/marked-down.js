@@ -64,21 +64,10 @@ export class MarkedDown extends LitElement {
         let d = document.createElement("div")
         d.innerHTML = m
         // console.log("D:", d)
-        body.assign(d)
+        // body.assign(d)
 
         this.renderRoot.querySelector("#content2").style.display = 'none'
         this.renderRoot.querySelector("#content").append(d)
-
-    }
-
-    updated() {
-        // console.log('markedDown.updated')
-        super.updated()
-        var canvas = this.renderRoot.querySelector('#content')
-        // console.log("CANVAS:", canvas)
-        let bod = canvas.textContent
-        // console.log("BOD:", bod)
-        // canvas.innerHTML = bod
 
     }
 
