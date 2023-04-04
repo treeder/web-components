@@ -22,7 +22,14 @@ export class Chip extends LitElement {
             width: 30px;
             border-radius: 50%;
           }
-        `;
+          .chip a {
+              text-decoration: none;
+              color: inherited;
+          }
+          .chip a:hover {
+              text-decoration: underline;
+          }
+        `
     }
 
     static get properties() {
@@ -38,28 +45,15 @@ export class Chip extends LitElement {
         this.icon = 'https://www.w3schools.com/howto/img_avatar2.png'
     }
 
-    async copy() {
-        try {
-            navigator.clipboard.writeText(this.value);
-            let sb = this.shadowRoot.getElementById("snackbar")
-            sb.labelText = "Copied to clipboard"
-            sb.show()
-        } catch (e) {
-            let sb = this.shadowRoot.getElementById("snackbar")
-            sb.labelText = `ERROR: ${e}`
-            sb.show()
-        }
-    }
-
     render() {
         return html`
             <div class="chip">
-                <img src="${this.icon}" alt="Person" >
+                <img src="${this.icon}" alt="">
                 ${this.value}
-                </div>
-        `;
+            </div>
+        `
     }
 
 }
 
-customElements.define('tr-chip', Chip);
+customElements.define('tr-chip', Chip)
