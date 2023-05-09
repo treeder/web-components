@@ -3,7 +3,7 @@ import { css } from 'https://cdn.jsdelivr.net/npm/lit@2/+esm'
 /* 
 trying to keep consistent with: https://getbootstrap.com/docs/5.0/utilities/spacing/#margin-and-padding
  */
-export const sharedStyles = css`
+export const nostrap = css`
           .mobile {
                /* display: none; */
           }
