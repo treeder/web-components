@@ -8,6 +8,9 @@ export const nostrap = css`
                /* display: none; */
           }
 
+.flexr {
+    display: flex;
+  }
           @media screen and (max-width: 767px) {
                /* Use this to hide and show elements for desktop vs mobile */
                /* .mobile {
@@ -40,7 +43,7 @@ export const nostrap = css`
                }
           }
           
-     .flex {
+    .flex {
     display: flex;
   }
   .flexw {
