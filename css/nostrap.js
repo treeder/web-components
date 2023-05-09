@@ -68,6 +68,12 @@ export const nostrap = css`
    .mb-3 {
         margin-bottom: 1rem;
    }
+   .mb-4 {
+        margin-bottom: 1.5rem;
+   }
+   .mb-5{
+           margin-bottom: 3rem;
+   }
    .pt-1 {
       padding-top: 0.25rem;
    }
