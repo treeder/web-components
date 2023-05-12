@@ -28,6 +28,6 @@ function cookieDomain(opts){
 }
 
 // if you set a custom domain in setCookie, you need to set the domain when you remove it too
-function removeCookie(name, opts = {}) {
+export function removeCookie(name, opts = {}) {
     document.cookie = `${name}=;  SameSite=None; Secure; domain=${cookieDomain(opts)}; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;`
 }
