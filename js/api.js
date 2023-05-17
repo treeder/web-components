@@ -37,7 +37,7 @@ export default async function api(path, np = { method: 'GET', body: {}, formData
         let sessionCookie = np.sessionCookie
         if (sessionCookie && sessionCookie !== '') {
             headers['Authorization'] = `Cookie ${sessionCookie}`
-        } else if (opts.tokenGetter) {
+        } else if (opts.getToken) {
             let token = await opts.getToken()
             headers['Authorization'] = "Bearer " + token
         } else {
