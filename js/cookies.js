@@ -7,7 +7,8 @@ export function getCookie(name) {
 
 // setCookie sets a cookie
 // Options:
-// * domain - default: root domain level (eg: example.com). To be more specific, set it to window.location.hostname (eg: app.example.com)
+// * domain - set which domain to use. default: window.location.hostname. 
+// * useRoot - true/false to use the root domain, ie: example.com even if using a sub-domain.  
 // * maxAge - how long the cookie should live, in seconds - default: 365 days
 export function setCookie(name, value, opts = {}) {
     if (!opts) opts = {}
@@ -17,8 +18,9 @@ export function setCookie(name, value, opts = {}) {
 }
 
 function cookieDomain(opts){
+    if (opts.domain) return opts.domain
     let domain = window.location.hostname
-    if (!opts.domain) {
+    if (opts.useRoot) {
         let sp = domain.split('.')
         if (sp.length > 2) {
             domain = sp.slice(-2).join('.')
