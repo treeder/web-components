@@ -1,6 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js'
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js'
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js"
+import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js"
 import { getCookie, setCookie } from 'https://cdn.jsdelivr.net/gh/treeder/web-components@0/js/cookies.js'
 
 var app, auth, analytics, firebaseConfig
@@ -26,17 +26,18 @@ export function firebaseInit(firebaseConfig2, opts = {}) {
         let val = getCookie('session')
         if (!val) {
             // then do a cookie refresh
-            if (sessionRefreshURL) {
-                console.log("REFRESHING SESSION COOKIE")
-                refreshSession(user)
-                // TODO: HANDLE ERROR, PROBABLY SIGN USER OUT?
-            }
+            refreshSession(user)
+                            // TODO: HANDLE ERROR, PROBABLY SIGN USER OUT?
         }
     })
 
 }
 
+// this will automatically call the sessionRefreshURL if there is a user, but no good cookie anymore 
 export async function refreshSession(user) {
+    if (!sessionRefreshURL) return
+    console.log("REFRESHING SESSION COOKIE")
+    
     const csrfToken = getCookie('csrfToken')
     let userID = user.uid
     let idToken = await user.getIdToken()
@@ -62,4 +63,4 @@ export async function refreshSession(user) {
 }
 
 
-export { app, auth, onAuthStateChanged, firebaseConfig }
+export { app, auth, onAuthStateChanged, firebaseConfig, analytics, logEvent }
