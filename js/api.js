@@ -1,4 +1,4 @@
-import { getCookie } from 'https://cdn.jsdelivr.net/gh/treeder/web-components@0.0.41/js/cookies.js'
+import { getCookie } from 'https://cdn.jsdelivr.net/gh/treeder/web-components@0/js/cookies.js'
 
 /*
 This is a wrapper around fetch that deals with auth tokens, cookies and marshalling and parsing JSON.
