@@ -8,7 +8,6 @@ var sessionCookieName = 'session'
 var sessionRefreshURL
 
 export function firebaseInit(firebaseConfig2, opts = {}) {
-    console.log("INITIALIZING FIREBASE", firebaseConfig2, opts)
     firebaseConfig = firebaseConfig2
     if (opts.sessionCookieName) sessionCookieName = opts.sessionCookieName
     if (opts.sessionRefreshURL) sessionRefreshURL = opts.sessionRefreshURL
