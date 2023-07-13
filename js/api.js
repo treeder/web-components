@@ -13,8 +13,8 @@ apiInit({apiURL: '${d.apiURL}', getToken: () => auth.currentUser.getIdToken()})
 var opts = {}
 
 // options:
-// * tokenGetter = null // you can set this and the it MUST have a getToken() function that returns a promise. This will be passed in as a Bearer token.
 // * apiURL = '' // set an API prefix so you don't have to pass in the full URL each time
+// * getToken = null // you can set this and the it MUST have a getToken() function that returns a promise. This will be passed in as a Bearer token.
 export function apiInit(options = {}) {
     opts = options
 }
@@ -31,9 +31,7 @@ export default async function api(path, np = { method: 'GET', body: {}, formData
 
     if (!headers['Authorization']) {
         // Cookie notes: cookies aren't passed in fetch by default: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-        // So we're doing some different things here.
-        // let user = auth.currentUser
-        // console.log("CURRENT USER:", user)
+        // So we're doing some different various things here: explicity -> getToken() function -> 'session' cookie
         let sessionCookie = np.sessionCookie
         if (sessionCookie && sessionCookie !== '') {
             headers['Authorization'] = `Cookie ${sessionCookie}`
