@@ -62,4 +62,4 @@ export async function refreshSession(user) {
 }
 
 
-export { app, auth, onAuthStateChanged, firebaseConfig, analytics, logEvent }
+export { app, auth, onAuthStateChanged, firebaseConfig, analytics, logEvent, signOut }
