@@ -1,6 +1,6 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js'
-import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js'
-import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js"
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js'
+import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js'
+import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-analytics.js"
 import { getCookie, setCookie } from 'https://cdn.jsdelivr.net/gh/treeder/web-components@0/js/cookies.js'
 
 var app, auth, analytics, firebaseConfig
