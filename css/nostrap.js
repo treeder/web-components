@@ -66,7 +66,7 @@ trying to keep consistent with: https://getbootstrap.com/docs/5.0/utilities/spac
 .mt-1 {
     margin-top: 0.25rem;
 }
-.mb-2 {
+.mt-2 {
      margin-top: 0.5rem;
 }
 .mt-3 {
@@ -98,18 +98,35 @@ trying to keep consistent with: https://getbootstrap.com/docs/5.0/utilities/spac
 .pt-1 {
      padding-top: 0.25rem;
 }
-
 .pt-2 {
      padding-top: 0.5rem;
 }
-
 .pt-3 {
      padding-top: 1rem;
 }
+.pt-4 {
+     padding-top: 1.5rem;
+}
+.pt-5 {
+     padding-top: 3rem;
+}
 
+.pb-1 {
+     padding-bottom: 0.25rem;
+}
+.pb-2 {
+     padding-bottom: 0.5rem;
+}
 .pb-3 {
      padding-bottom: 1rem;
 }
+.pb-4 {
+     padding-bottom: 1.5rem;
+}
+.pb-5 {
+     padding-bottom: 3rem;
+}
+
 
 .p-1 {
      padding: 0.25rem;
