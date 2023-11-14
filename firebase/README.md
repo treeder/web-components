@@ -4,5 +4,5 @@ Initialize:
 
 ```js
 import {firebaseInit, auth} from 'https://cdn.jsdelivr.net/gh/treeder/web-components@0/firebase/firebase2.js'
-firebaseInit(firebaseConfig, {sessionRefreshURL: '${d.apiURL}/v1/session'})
+firebaseInit(firebaseConfig, {sessionRefreshURL: `${d.apiURL}/v1/session`})
 ```
