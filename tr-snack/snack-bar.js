@@ -64,17 +64,14 @@ class SnackBar extends LitElement {
     }
 
     render() {
-        console.log("Render", Date.now())
         if (!this.showing) return ''
         let animStyle = `animation: fadein 0.5s, fadeout 0.5s ${this.duration}ms forwards;`
-        console.log("AnimStyle", animStyle)
         return html`
             <div id="snackbar" class="show" style="${animStyle}">${this.message}</div>
         `
     }
 
     show() {
-        console.log("Show", Date.now())
         this.showing = true
         // var x = this.renderRoot.getElementById("snackbar")
         // x.className = "show"
@@ -85,7 +82,6 @@ class SnackBar extends LitElement {
     }
 
     close() {
-        console.log("Closing", Date.now())
         this.showing = false
         // var x = this.renderRoot.getElementById("snackbar")
         // x.className = x.className.replace("show", "")
