@@ -1,19 +1,26 @@
 import { html, css, LitElement } from 'lit'
 
-export function snack(message) {
+export function snack(message, { duration = 3000 } = {}) {
     let snack = document.createElement('snack-bar')
     // const x = document.getElementById("snackbar")
     snack.message = message
+    snack.duration = duration
     // snack.className = "show"
-    // snack.show()
     document.body.appendChild(snack)
-    setTimeout(function () { snack.close() }, 5000)
+    // todo: set duration, but needs to update the fadein/fadeout timing too
+    // snack.show()
+    // can't just call show() because it may not be rendered yet
+    // snack.className = "show"
+    // snack.style.setProperty('-webkit-animation', 'fadein 0.5s, fadeout 0.5s 2.5s')
+    // snack.style.setProperty('animation', 'fadein 0.5s, fadeout 0.5s 2.5s')
+    snack.show()
+    // setTimeout(function () { snack.close() }, duration)
 }
 
 class SnackBar extends LitElement {
     static styles = css`
         #snackbar {
-  visibility: hidden;
+  /* visibility: hidden; */
   min-width: 250px;
   margin-left: -125px;
   background-color: var(--md-sys-color-inverse-surface, #333);
@@ -29,24 +36,12 @@ class SnackBar extends LitElement {
 }
 
 #snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 30px; opacity: 1;}
+  /* visibility: visible; */
 }
 
 @keyframes fadein {
   from {bottom: 0; opacity: 0;}
   to {bottom: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;} 
-  to {bottom: 0; opacity: 0;}
 }
 
 @keyframes fadeout {
@@ -56,29 +51,44 @@ class SnackBar extends LitElement {
     `
 
     static properties = {
-        message: { type: String }
+        message: { type: String },
+        showing: { type: Boolean },
+        duration: { type: Number },
     }
 
     constructor() {
         super()
         this.message = ""
+        this.showing = false
+        this.duration = 3000
     }
 
     render() {
+        console.log("Render", Date.now())
+        if (!this.showing) return ''
+        let animStyle = `animation: fadein 0.5s, fadeout 0.5s ${this.duration}ms forwards;`
+        console.log("AnimStyle", animStyle)
         return html`
-            <div id="snackbar" class="show">${this.message}</div>
+            <div id="snackbar" class="show" style="${animStyle}">${this.message}</div>
         `
     }
 
     show() {
-        var x = this.renderRoot.getElementById("snackbar")
-        x.className = "show"
-        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+        console.log("Show", Date.now())
+        this.showing = true
+        // var x = this.renderRoot.getElementById("snackbar")
+        // x.className = "show"
+        // x.style.setProperty('-webkit-animation', 'fadein 0.5s, fadeout 0.5s 2.5s')
+        // x.style.setProperty('animation', 'fadein 0.5s, fadeout 0.5s 2.5s')
+        // console.log("after show")
+        setTimeout(() => { this.close() }, this.duration + 500) // added 500 for enough time to fade out. forwards makes it keep the final state. https://stackoverflow.com/questions/12991164/maintaining-the-final-state-at-end-of-a-css-animation
     }
 
     close() {
-        var x = this.renderRoot.getElementById("snackbar")
-        x.className = x.className.replace("show", "")
+        console.log("Closing", Date.now())
+        this.showing = false
+        // var x = this.renderRoot.getElementById("snackbar")
+        // x.className = x.className.replace("show", "")
     }
 }
 
