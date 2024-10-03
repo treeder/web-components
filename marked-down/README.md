@@ -1,5 +1,7 @@
 ## marked-down
 
+MOVED TO https://github.com/treeder/marked-down
+
 This web component will apply markdown formatting to any text simply by wrapping it with the component tags.
 
 ```js
