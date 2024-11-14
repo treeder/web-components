@@ -1,6 +1,6 @@
-import { html, css, LitElement } from 'https://cdn.jsdelivr.net/npm/lit@2/+esm'
-import 'https://cdn.jsdelivr.net/npm/@material/mwc-snackbar@0/+esm'
-import 'https://cdn.jsdelivr.net/npm/@material/mwc-icon-button@0/+esm'
+import { html, css, LitElement } from 'https://cdn.jsdelivr.net/npm/lit@3/index.js'
+import 'https://cdn.jsdelivr.net/gh/treeder/material@0/snackbar/snackbar.js'
+import 'https://cdn.jsdelivr.net/gh/treeder/material@0/iconbutton/iconbutton.js'
 
 export class Clippy extends LitElement {
 
@@ -9,9 +9,6 @@ export class Clippy extends LitElement {
         mwc-icon-button {
             --mdc-icon-size: 14px;
             --mdc-icon-button-size: 22px;
-            // these don't work, I think because it creates a cycle:
-        //    --mdc-icon-size: var(--mdc-icon-size, 14px);
-        //    --mdc-icon-button-size: var(--mdc-icon-button-size, 20px);
         }
         `;
     }
@@ -42,8 +39,8 @@ export class Clippy extends LitElement {
 
     render() {
         return html`
-        <mwc-icon-button @click='${this.copy}' icon="content_copy"></mwc-icon-button>
-        <mwc-snackbar id="snackbar" labelText="..."></mwc-snackbar>
+        <md-icon-button @click='${this.copy}' icon="content_copy"></mwc-icon-button>
+        <md-snackbar id="snackbar" message="..."></md-snackbar>
         `;
     }
 
