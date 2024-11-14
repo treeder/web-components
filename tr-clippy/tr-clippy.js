@@ -7,9 +7,9 @@ export class Clippy extends LitElement {
 
     static get styles() {
         return css`
-        mwc-icon-button {
-            --mdc-icon-size: 14px;
-            --mdc-icon-button-size: 22px;
+        md-icon-button {
+            --md-icon-button-icon-size: 16px;
+            --md-icon-button-size: 22px;
         }
         `;
     }
@@ -29,11 +29,11 @@ export class Clippy extends LitElement {
         try {
             navigator.clipboard.writeText(this.value);
             let sb = this.shadowRoot.getElementById("snackbar")
-            sb.labelText = "Copied to clipboard"
+            sb.message = "Copied to clipboard"
             sb.show()
         } catch (e) {
             let sb = this.shadowRoot.getElementById("snackbar")
-            sb.labelText = `ERROR: ${e}`
+            sb.message = `ERROR: ${e}`
             sb.show()
         }
     }
