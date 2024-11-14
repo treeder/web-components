@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'https://cdn.jsdelivr.net/npm/lit@3/index.js'
 import 'https://cdn.jsdelivr.net/gh/treeder/material@0/snackbar/snackbar.js'
-import 'https://cdn.jsdelivr.net/gh/treeder/material@0/iconbutton/iconbutton.js'
+import 'https://cdn.jsdelivr.net/gh/treeder/material@0/iconbutton/icon-button.js'
 
 export class Clippy extends LitElement {
 
