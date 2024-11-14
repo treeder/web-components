@@ -8,8 +8,9 @@ export class Clippy extends LitElement {
     static get styles() {
         return css`
         md-icon-button {
-            --md-icon-button-icon-size: 16px;
-            --md-icon-button-size: 22px;
+            --md-icon-button-icon-size: 16px; 
+            --md-icon-button-container-width: 24px; 
+            --md-icon-button-container-height: 24px;
         }
         `;
     }
