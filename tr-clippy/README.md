@@ -9,6 +9,6 @@ Simple way to add a "copy to clipboard" element.
     import "https://cdn.jsdelivr.net/gh/treeder/web-components@0/tr-clippy/tr-clippy.js"
 </script>
 
-<tr-clippy value="SOMETHING"></my-clippy> 
+<tr-clippy value="SOMETHING"></tr-clippy> 
 ```
 
