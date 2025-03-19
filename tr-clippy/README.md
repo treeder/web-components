@@ -2,6 +2,8 @@
 
 Simple way to add a "copy to clipboard" element. 
 
+Requires an import map for [treeder/material](https://github.com/treeder/material).
+
 ## Usages
 
 ```html
