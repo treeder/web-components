@@ -1,4 +1,4 @@
-import { html, css, LitElement } from 'https://cdn.jsdelivr.net/npm/lit@2/+esm'
+import { html, css, LitElement } from 'lit'
 
 export class Shorten extends LitElement {
 
